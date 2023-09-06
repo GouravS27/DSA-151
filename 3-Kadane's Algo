@@ -1,0 +1,46 @@
+------------C++---------------------------
+int maxSubArray(vector<int>& nums) {
+        int summ=0;
+        int maxi=nums[0];
+
+        for(int i=0;i<nums.size();i++)
+        {
+            summ=summ+nums[i];
+
+            maxi=max(maxi,summ);
+
+            if(summ<0) summ=0;
+        }
+        return maxi;
+    }
+
+----------------JAVA---------------------
+public int maxSubArray(int[] nums) {
+        int sum = 0;
+        int maxSum = nums[0];
+
+        for (int i = 0; i < nums.length; i++) {
+            sum = sum + nums[i];
+            maxSum = Math.max(maxSum, sum);
+
+            if (sum < 0) {
+                sum = 0;
+            }
+        }
+
+        return maxSum;
+    }
+
+---------------Pyhton---------
+def maxSubArray(self, nums: List[int]) -> int:
+        summ=0
+        maxx=nums[0]
+
+        for i in range(len(nums)):
+            summ+=nums[i]
+            maxx=max(maxx,summ)
+
+            if summ<0:
+                summ=0
+
+        return maxx
